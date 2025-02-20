@@ -1,0 +1,98 @@
+# --- Bridge configuration for Ignition and ROS 2
+# Topics for controlling joints and receiving joint states
+
+# Controle de comandos das juntas da coxa
+- ros_topic_name: "/laracna/coxa_lb_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/coxa_lb_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/laracna/coxa_rb_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/coxa_rb_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/laracna/coxa_lt_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/coxa_lt_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/laracna/coxa_rt_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/coxa_rt_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+# Controle de comandos das juntas do fêmur
+- ros_topic_name: "/laracna/femur_lb_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/femur_lb_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/laracna/femur_rb_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/femur_rb_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/laracna/femur_lt_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/femur_lt_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/laracna/femur_rt_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/femur_rt_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+# Controle de comandos das juntas da tíbia
+- ros_topic_name: "/laracna/tibia_lb_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/tibia_lb_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/laracna/tibia_rb_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/tibia_rb_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/laracna/tibia_lt_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/tibia_lt_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/laracna/tibia_rt_j/cmd_pos"
+  gz_topic_name: "/model/laracna/joint/tibia_rt_j/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+# Publicação dos estados das juntas para cada junta
+- ros_topic_name: "/laracna/joint_states"
+  gz_topic_name: "/model/laracna/joint_states"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "gz.msgs.JointState"
+  direction: GZ_TO_ROS
+
+# Odometria ou dados de sensor (opcional)
+- ros_topic_name: "/laracna/odometry"
+  gz_topic_name: "/model/laracna/odometry"
+  ros_type_name: "nav_msgs/msg/Odometry"
+  gz_type_name: "gz.msgs.Odometry"
+  direction: GZ_TO_ROS
+
+# Transformações TF para os frames das juntas
+- ros_topic_name: "/tf"
+  gz_topic_name: "/model/laracna/pose"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "gz.msgs.Pose_V"
+  direction: GZ_TO_ROS
