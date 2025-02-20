@@ -77,137 +77,17 @@
     </model>
 
     
-
-    
-
-
-    
-    <!-- <gazebo>
-      <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
-        <robot_param>robot_description</robot_param>
-        <robot_param_node>robot_state_publisher</robot_param_node>
-        <parameters>$(find ign_ros2_control_demos)/config/cart_controller.yaml</parameters>
-      </plugin>
-    </gazebo> -->
+ 
 
     <model name="laracna">
-      <!-- <self_collide>true</self_collide> -->
-      <self_collide>false</self_collide>
+      <self_collide>true</self_collide>
+      <!-- <self_collide>false</self_collide> -->
       <pose>0 0 0.35 0 0 0</pose>
       <include merge="true">
         <uri>package://ros_gz_example_description/models/laracna</uri>
       </include>
 
-      <!-- <controller name="joint_position_controller" type="ignition::gazebo::systems::JointPositionController">
-        <joint name="coxa_lt_j"/>
-      </controller> -->
-
-      <!-- <plugin filename="libignition-gazebo-ros2-control-system.so" name="ignition::gazebo::systems::Ros2Control">
-        <ros>
-          <namespace>/laracna</namespace>
-          <parameters>ros2_control.yaml</parameters>
-        </ros>
-      </plugin> -->
-
-
-      <!-- <ros_control>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>coxa_lb_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>coxa_rb_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>coxa_lt_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>coxa_rt_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>femur_lb_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>femur_rb_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>femur_lt_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>femur_rt_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>tibia_lb_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>tibia_rb_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>tibia_lt_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-        <controller type="position_controllers/JointPositionController" name="joint_position_controller">
-          <joint>tibia_rt_j</joint>
-          <pid>
-            <p>100.0</p>
-            <i>0.1</i>
-            <d>10.0</d>
-          </pid>
-        </controller>
-      </ros_control> -->
+     
 
 
       <!--Coxa -->
