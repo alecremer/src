@@ -86,7 +86,8 @@
       </visual>
     </link>
     <joint name='femur_lb_j' type='revolute'>
-      <pose relative_to='coxa_lb'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose>
+      <!-- <pose relative_to='coxa_lb'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose> -->
+      <pose relative_to='coxa_lb'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.0</pose>
       <parent>coxa_lb</parent>
       <child>femur_lb</child>
       <axis>
@@ -141,7 +142,8 @@
       </visual>
     </link>
     <joint name='tibia_lb_j' type='revolute'>
-      <pose relative_to='femur_lb'>0.06 0 0.0355 0 0 -1.9</pose>
+      <!-- <pose relative_to='femur_lb'>0.06 0 0.0355 0 0 -1.9</pose> -->
+      <pose relative_to='femur_lb'>0.06 0 0.0355 0 0 0.0</pose>
       <parent>femur_lb</parent>
       <child>tibia_lb</child>
       <axis>
@@ -251,7 +253,8 @@
       </visual>
     </link>
     <joint name='femur_lt_j' type='revolute'>
-      <pose relative_to='coxa_lt'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose>
+      <!-- <pose relative_to='coxa_lt'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose> -->
+      <pose relative_to='coxa_lt'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.0</pose>
       <parent>coxa_lt</parent>
       <child>femur_lt</child>
       <axis>
@@ -306,7 +309,8 @@
       </visual>
     </link>
     <joint name='tibia_lt_j' type='revolute'>
-      <pose relative_to='femur_lt'>0.06 0 0.0355 0 0 -1.8112</pose>
+      <!-- <pose relative_to='femur_lt'>0.06 0 0.0355 0 0 -1.8112</pose> -->
+      <pose relative_to='femur_lt'>0.06 0 0.0355 0 0 0.0</pose>
       <parent>femur_lt</parent>
       <child>tibia_lt</child>
       <axis>
@@ -416,7 +420,8 @@
       </visual>
     </link>
     <joint name='femur_rb_j' type='revolute'>
-      <pose relative_to='coxa_rb'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose>
+      <!-- <pose relative_to='coxa_rb'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose> -->
+      <pose relative_to='coxa_rb'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.0</pose>
       <parent>coxa_rb</parent>
       <child>femur_rb</child>
       <axis>
@@ -471,7 +476,8 @@
       </visual>
     </link>
     <joint name='tibia_rb_j' type='revolute'>
-      <pose relative_to='femur_rb'>0.06 0 0.0355 0 0 -1.7681</pose>
+      <!-- <pose relative_to='femur_rb'>0.06 0 0.0355 0 0 -1.7681</pose> -->
+      <pose relative_to='femur_rb'>0.06 0 0.0355 0 0 0.0</pose>
       <parent>femur_rb</parent>
       <child>tibia_rb</child>
       <axis>
@@ -581,7 +587,8 @@
       </visual>
     </link>
     <joint name='femur_rt_j' type='revolute'>
-      <pose relative_to='coxa_rt'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose>
+      <!-- <pose relative_to='coxa_rt'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose> -->
+      <pose relative_to='coxa_rt'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.0</pose>
       <parent>coxa_rt</parent>
       <child>femur_rt</child>
       <axis>
@@ -636,7 +643,8 @@
       </visual>
     </link>
     <joint name='tibia_rt_j' type='revolute'>
-      <pose relative_to='femur_rt'>0.06 0 0.0355 0 0 -1.7368</pose>
+      <!-- <pose relative_to='femur_rt'>0.06 0 0.0355 0 0 -1.7368</pose> -->
+      <pose relative_to='femur_rt'>0.06 0 0.0355 0 0 0.0</pose>
       <parent>femur_rt</parent>
       <child>tibia_rt</child>
       <axis>
