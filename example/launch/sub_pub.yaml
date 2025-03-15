@@ -1,0 +1,14 @@
+launch:
+
+- node:
+    pkg: "example"
+    exec: "subscriber_node"
+    name: "sub_node"
+    namespace: "example_sub"
+    output: "screen"
+  
+- node:
+    pkg: "example"
+    exec: "publisher_node"
+    name: "pub_node"
+    namespace: "example_pub"

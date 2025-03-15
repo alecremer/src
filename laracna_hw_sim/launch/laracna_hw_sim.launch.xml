@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="laracna_sim_hw" pkg="laracna_hw_sim" exec="laracna_hw_sim_node" output="screen" namespace="laracna_sim_hw"/>
+    
+</launch>
