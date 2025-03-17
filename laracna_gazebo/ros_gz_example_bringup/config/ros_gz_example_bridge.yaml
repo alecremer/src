@@ -2,75 +2,87 @@
 # Topics for controlling joints and receiving joint states
 
 # Controle de comandos das juntas da coxa
-- ros_topic_name: "/laracna/coxa_lb_j/cmd_pos"
+# - ros_topic_name: "/laracna/coxa_lb_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_lb/coxa/move"
   gz_topic_name: "/model/laracna/joint/coxa_lb_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "/laracna/coxa_rb_j/cmd_pos"
+# - ros_topic_name: "/laracna/coxa_rb_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_rb/coxa/move"
   gz_topic_name: "/model/laracna/joint/coxa_rb_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "/laracna/coxa_lt_j/cmd_pos"
+# - ros_topic_name: "/laracna/coxa_lt_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_lt/coxa/move"
   gz_topic_name: "/model/laracna/joint/coxa_lt_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "/laracna/coxa_rt_j/cmd_pos"
+# - ros_topic_name: "/laracna/coxa_rt_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_rt/coxa/move"
   gz_topic_name: "/model/laracna/joint/coxa_rt_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
 # Controle de comandos das juntas do fêmur
-- ros_topic_name: "/laracna/femur_lb_j/cmd_pos"
+# - ros_topic_name: "/laracna/femur_lb_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_lb/femur/move"
   gz_topic_name: "/model/laracna/joint/femur_lb_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "/laracna/femur_rb_j/cmd_pos"
+# - ros_topic_name: "/laracna/femur_rb_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_rb/femur/move"
   gz_topic_name: "/model/laracna/joint/femur_rb_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "/laracna/femur_lt_j/cmd_pos"
+# - ros_topic_name: "/laracna/femur_lt_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_lt/femur/move"
   gz_topic_name: "/model/laracna/joint/femur_lt_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "/laracna/femur_rt_j/cmd_pos"
+# - ros_topic_name: "/laracna/femur_rt_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_rt/femur/move"
   gz_topic_name: "/model/laracna/joint/femur_rt_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
 # Controle de comandos das juntas da tíbia
-- ros_topic_name: "/laracna/tibia_lb_j/cmd_pos"
+# - ros_topic_name: "/laracna/tibia_lb_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_lb/tibia/move"
   gz_topic_name: "/model/laracna/joint/tibia_lb_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "/laracna/tibia_rb_j/cmd_pos"
+# - ros_topic_name: "/laracna/tibia_rb_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_rb/tibia/move"
   gz_topic_name: "/model/laracna/joint/tibia_rb_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "/laracna/tibia_lt_j/cmd_pos"
+# - ros_topic_name: "/laracna/tibia_lt_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_lt/tibia/move"
   gz_topic_name: "/model/laracna/joint/tibia_lt_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "/laracna/tibia_rt_j/cmd_pos"
+# - ros_topic_name: "/laracna/tibia_rt_j/cmd_pos"
+- ros_topic_name: "/hw_sim/leg_rt/tibia/move"
   gz_topic_name: "/model/laracna/joint/tibia_rt_j/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
