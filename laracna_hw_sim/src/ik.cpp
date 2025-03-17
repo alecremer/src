@@ -175,7 +175,7 @@ std::array<float, 3> IK::getAngles(const std::array<float, 3>& position, const f
     data << "t: " << MathUtils::radToDeg(theta2) << "\n";
     data << "--------------------------------------" << "\n";
 
-    std::cout << data.str();
+    // std::cout << data.str();
 
 
     // ----------------------------------------

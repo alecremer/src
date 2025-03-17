@@ -6,9 +6,10 @@ using std::placeholders::_1;
 DriverSim::DriverSim(const LegPublishers &leg_publishers): _leg_publishers(leg_publishers){
     
 
+    std::cout << "SETTING UP MOVERS" << std::endl;
     move_coxa = bind(&DriverSim::move_servo, this, _leg_publishers.coxa, _1);
     move_femur = bind(&DriverSim::move_servo, this, _leg_publishers.femur, _1);
-    move_femur = bind(&DriverSim::move_servo, this, _leg_publishers.tibia, _1);
+    move_tibia = bind(&DriverSim::move_servo, this, _leg_publishers.tibia, _1);
 }
 
 
@@ -16,10 +17,11 @@ DriverSim::DriverSim(): _leg_publishers(LegPublishers()){}
 
 void DriverSim::move_servo(const Publisher<std_msgs::msg::Float64>::SharedPtr &publisher, const float& angle){
 
+    std::cout << "CAAAAAAALLED" << std::endl;
     auto message = std_msgs::msg::Float64();
     message.data = angle;
     publisher->publish(message);
-    std::cout << "Publishing";
+    std::cout << "Publishing" << std::endl;
 }
 
 

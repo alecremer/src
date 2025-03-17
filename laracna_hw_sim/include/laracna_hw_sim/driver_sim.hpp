@@ -18,13 +18,13 @@ class DriverSim{
         DriverSim(void);
 
         void move_servo(const Publisher<std_msgs::msg::Float64>::SharedPtr &publisher, const float& angle);
-        std::function<void(float)> move_coxa;
-        std::function<void(float)> move_femur;
-        std::function<void(float)> move_tibia;
+        std::function<void(const float&)> move_coxa;
+        std::function<void(const float&)> move_femur;
+        std::function<void(const float&)> move_tibia;
 
     private:
 
-        const LegPublishers _leg_publishers;
+        LegPublishers _leg_publishers;
 };
 
 #endif

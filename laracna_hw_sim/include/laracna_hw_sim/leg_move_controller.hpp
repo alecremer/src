@@ -24,6 +24,7 @@ public:
             femur_length = leg_move_controller.femur_length;
             tibia_length = leg_move_controller.tibia_length;
             _leg_config = leg_move_controller._leg_config;
+            _driver_sim = leg_move_controller._driver_sim;
             // Copiar outros membros, se necessário
         }
         return *this;

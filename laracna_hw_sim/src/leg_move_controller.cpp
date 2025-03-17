@@ -18,7 +18,7 @@ LegMoveController::LegMoveController(const LegConfig& leg_config_ext, const LegP
     coxa_length = _leg_config.coxa_length;
     femur_length = _leg_config.femur_length;
     tibia_length = _leg_config.tibia_length;
-
+    
 }
 
 LegMoveController::LegMoveController() : _driver_sim(){}
@@ -28,7 +28,6 @@ void LegMoveController::move_to_position(std::array<float, 3>& position){
 
 
     const std::array<float, 3> servo_angles = ik_servo.getAngles(position, coxa_length, femur_length, tibia_length);
-
 
 
     float coxa_angle = servo_angles.at(0) + MathUtils::degToRad(_leg_config.coxa_angle_offset);
@@ -44,22 +43,27 @@ void LegMoveController::move_to_position(std::array<float, 3>& position){
     bool femur_angle_ok = (0 <= femur_angle && femur_angle <= M_PI);
     bool tibia_angle_ok = (0 <= tibia_angle && tibia_angle <= M_PI);
     
+    
     if(coxa_angle_ok && femur_angle_ok && tibia_angle_ok){
 
-        move_servo_coxa(MathUtils::radToDeg(coxa_angle));
-        move_servo_femur(MathUtils::radToDeg(femur_angle));
-        move_servo_tibia(MathUtils::radToDeg(tibia_angle));
-        std::cout << "VAAAAAAAAAAAAAAAAAAALIIIIIIIIIIIIIID" << std::endl;
+        move_servo_coxa(coxa_angle);
+        move_servo_femur(femur_angle);
+        move_servo_tibia(tibia_angle);
+        
+        string m = "Rad: " + to_string(coxa_angle) + ", " + to_string(femur_angle) + ", " + to_string(tibia_angle);
+        std::cout << "angle: " << m << std::endl;
+        m = "degrees: " + to_string(MathUtils::radToDeg(coxa_angle)) + ", " + to_string(MathUtils::radToDeg(femur_angle)) + ", " + to_string(MathUtils::radToDeg(tibia_angle));
+        std::cout << "angle: " << m << std::endl;
     }
     else{
-        string m = "Invalid angle: " + to_string(coxa_angle) + ", " + to_string(femur_angle) + ", " + to_string(tibia_angle);
-        std::cout << "Invalid angle: " << m << std::endl;
 
     }
 
 }
 
-void LegMoveController::move_servo_coxa(const float &angle){ _driver_sim.move_coxa(angle);}
+void LegMoveController::move_servo_coxa(const float &angle){ 
+    _driver_sim.move_coxa(angle);
+    }
 void LegMoveController::move_servo_femur(const float &angle){ _driver_sim.move_femur(angle);}
 void LegMoveController::move_servo_tibia(const float &angle){ _driver_sim.move_tibia(angle);}
 

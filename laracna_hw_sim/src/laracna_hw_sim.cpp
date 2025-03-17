@@ -22,21 +22,21 @@ public:
     LaracnaHWSim(): Node("laracna_hw_sim"){
 
         // populate leg_publishers
-        auto publisher_coxa_move_lt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lt/coxa/move", 10);
-        auto publisher_femur_move_lt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lt/femur/move", 10);
-        auto publisher_tibia_move_lt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lt/tibia/move", 10);
+        publisher_coxa_move_lt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lt/coxa/move", 10);
+        publisher_femur_move_lt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lt/femur/move", 10);
+        publisher_tibia_move_lt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lt/tibia/move", 10);
 
-        auto publisher_coxa_move_rt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rt/coxa/move", 10);
-        auto publisher_femur_move_rt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rt/femur/move", 10);
-        auto publisher_tibia_move_rt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rt/tibia/move", 10);
+        publisher_coxa_move_rt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rt/coxa/move", 10);
+        publisher_femur_move_rt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rt/femur/move", 10);
+        publisher_tibia_move_rt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rt/tibia/move", 10);
 
-        auto publisher_coxa_move_lb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lb/coxa/move", 10);
-        auto publisher_femur_move_lb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lb/femur/move", 10);
-        auto publisher_tibia_move_lb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lb/tibia/move", 10);
+        publisher_coxa_move_lb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lb/coxa/move", 10);
+        publisher_femur_move_lb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lb/femur/move", 10);
+        publisher_tibia_move_lb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lb/tibia/move", 10);
 
-        auto publisher_coxa_move_rb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rb/coxa/move", 10);
-        auto publisher_femur_move_rb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rb/femur/move", 10);
-        auto publisher_tibia_move_rb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rb/tibia/move", 10);
+        publisher_coxa_move_rb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rb/coxa/move", 10);
+        publisher_femur_move_rb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rb/femur/move", 10);
+        publisher_tibia_move_rb = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_rb/tibia/move", 10);
 
         leg_rt_publishers = LegPublishers(publisher_coxa_move_rt, publisher_femur_move_rt, publisher_tibia_move_rt);
         leg_lt_publishers = LegPublishers(publisher_coxa_move_lt, publisher_femur_move_lt, publisher_tibia_move_lt);
@@ -133,8 +133,6 @@ public:
             move_manager.move_leg_to_position(leg_config_rb.id, leg_rb_pos);
             rate.sleep();
 
-            std::cout << "Running" << std::endl;
-
 
         }
 
@@ -157,6 +155,22 @@ private:
     LegConfig leg_config_rb;
 
     MoveManager move_manager;
+
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_coxa_move_lt;
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_femur_move_lt;
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_tibia_move_lt;
+
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_coxa_move_rt;
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_femur_move_rt;
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_tibia_move_rt;
+
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_coxa_move_lb;
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_femur_move_lb;
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_tibia_move_lb;
+
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_coxa_move_rb;
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_femur_move_rb;
+    Publisher<std_msgs::msg::Float64>::SharedPtr publisher_tibia_move_rb;
 
     Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr subscriber_leg_lt;
     Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr subscriber_leg_lb;
