@@ -47,7 +47,7 @@ void LegMoveController::move_to_position(std::array<float, 3>& position){
     if(coxa_angle_ok && femur_angle_ok && tibia_angle_ok){
 
         move_servo_coxa(coxa_angle);
-        move_servo_femur(femur_angle);
+        move_servo_femur(-femur_angle);
         move_servo_tibia(tibia_angle);
         
         string m = "Rad: " + to_string(coxa_angle) + ", " + to_string(femur_angle) + ", " + to_string(tibia_angle);

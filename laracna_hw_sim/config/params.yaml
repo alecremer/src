@@ -1,0 +1,8 @@
+/laracna_hw_sim:
+  ros__parameters:
+    coxa_length: 42.0
+    femur_length: 60.0
+    tibia_length: 130.0
+    coxa_angle_offset: 0.0
+    femur_angle_offset: 0.0
+    tibia_angle_offset: 0.0

@@ -9,17 +9,32 @@
 #include "std_msgs/msg/bool.hpp"
 #include "rclcpp/rclcpp.hpp"
 
-#define COXA_LENGTH 1.0
-#define FEMUR_LENGTH 1.0
-#define TIBIA_LENGTH 1.0
-#define COXA_ANGLE_OFFSET 90.0
-#define FEMUR_ANGLE_OFFSET 90.0
-#define TIBIA_ANGLE_OFFSET 45.0
+// #define COXA_LENGTH 1.0
+// #define FEMUR_LENGTH 1.0
+// #define TIBIA_LENGTH 1.0
+// #define COXA_ANGLE_OFFSET 90.0
+// #define FEMUR_ANGLE_OFFSET 90.0
+// #define TIBIA_ANGLE_OFFSET 45.0
 #define RATE 100
 
 class LaracnaHWSim : public rclcpp::Node{
 public:
     LaracnaHWSim(): Node("laracna_hw_sim"){
+
+        this->declare_parameter<double>("coxa_length", 1.0);
+        this->declare_parameter<double>("femur_length", 1.0);
+        this->declare_parameter<double>("tibia_length", 1.0);
+        this->declare_parameter<double>("coxa_angle_offset", 90.0);
+        this->declare_parameter<double>("femur_angle_offset", 90.0);
+        this->declare_parameter<double>("tibia_angle_offset", 45.0);
+
+        // get params
+        coxa_length = get_parameter("coxa_length").as_double();
+        femur_length = get_parameter("femur_length").as_double();
+        tibia_length = get_parameter("tibia_length").as_double();
+        coxa_angle_offset = get_parameter("coxa_angle_offset").as_double();
+        femur_angle_offset = get_parameter("femur_angle_offset").as_double();
+        tibia_angle_offset = get_parameter("tibia_angle_offset").as_double();
 
         // populate leg_publishers
         publisher_coxa_move_lt = this->create_publisher<std_msgs::msg::Float64>("/hw_sim/leg_lt/coxa/move", 10);
@@ -46,11 +61,15 @@ public:
 
         // create leg config 
 
-        leg_config_lt = LegConfig(COXA_LENGTH, FEMUR_LENGTH, TIBIA_LENGTH, COXA_ANGLE_OFFSET, FEMUR_ANGLE_OFFSET, TIBIA_ANGLE_OFFSET, "leg_lt");
-        leg_config_rt = LegConfig(COXA_LENGTH, FEMUR_LENGTH, TIBIA_LENGTH, COXA_ANGLE_OFFSET, FEMUR_ANGLE_OFFSET, TIBIA_ANGLE_OFFSET, "leg_rt");
-        leg_config_lb = LegConfig(COXA_LENGTH, FEMUR_LENGTH, TIBIA_LENGTH, COXA_ANGLE_OFFSET, FEMUR_ANGLE_OFFSET, TIBIA_ANGLE_OFFSET, "leg_lb");
-        leg_config_rb = LegConfig(COXA_LENGTH, FEMUR_LENGTH, TIBIA_LENGTH, COXA_ANGLE_OFFSET, FEMUR_ANGLE_OFFSET, TIBIA_ANGLE_OFFSET, "leg_rb");
+        leg_config_lt = LegConfig(coxa_length, femur_length, tibia_length, coxa_angle_offset, femur_angle_offset, tibia_angle_offset, "leg_lt");
+        leg_config_rt = LegConfig(coxa_length, femur_length, tibia_length, coxa_angle_offset, femur_angle_offset, tibia_angle_offset, "leg_rt");
+        leg_config_lb = LegConfig(coxa_length, femur_length, tibia_length, coxa_angle_offset, femur_angle_offset, tibia_angle_offset, "leg_lb");
+        leg_config_rb = LegConfig(coxa_length, femur_length, tibia_length, coxa_angle_offset, femur_angle_offset, tibia_angle_offset, "leg_rb");
 
+        // leg_config_lt = LegConfig(COXA_LENGTH, FEMUR_LENGTH, TIBIA_LENGTH, COXA_ANGLE_OFFSET, FEMUR_ANGLE_OFFSET, TIBIA_ANGLE_OFFSET, "leg_lt");
+        // leg_config_rt = LegConfig(COXA_LENGTH, FEMUR_LENGTH, TIBIA_LENGTH, COXA_ANGLE_OFFSET, FEMUR_ANGLE_OFFSET, TIBIA_ANGLE_OFFSET, "leg_rt");
+        // leg_config_lb = LegConfig(COXA_LENGTH, FEMUR_LENGTH, TIBIA_LENGTH, COXA_ANGLE_OFFSET, FEMUR_ANGLE_OFFSET, TIBIA_ANGLE_OFFSET, "leg_lb");
+        // leg_config_rb = LegConfig(COXA_LENGTH, FEMUR_LENGTH, TIBIA_LENGTH, COXA_ANGLE_OFFSET, FEMUR_ANGLE_OFFSET, TIBIA_ANGLE_OFFSET, "leg_rb");
 
         // create leg move controller
 
@@ -122,13 +141,13 @@ public:
             leg_rb_pos = leg_rb_pos_ros;
 
             move_manager.move_leg_to_position(leg_config_lb.id, leg_lb_pos);
-            rate.sleep();
+            // rate.sleep();
             
             move_manager.move_leg_to_position(leg_config_lt.id, leg_lt_pos);
-            rate.sleep();
+            // rate.sleep();
             
             move_manager.move_leg_to_position(leg_config_rt.id, leg_rt_pos);
-            rate.sleep();
+            // rate.sleep();
 
             move_manager.move_leg_to_position(leg_config_rb.id, leg_rb_pos);
             rate.sleep();
@@ -138,6 +157,14 @@ public:
 
     }
 private:
+
+    float coxa_length = 0.0f;
+    float femur_length = 0.0f;
+    float tibia_length = 0.0f;
+
+    float coxa_angle_offset = 0.0f;
+    float femur_angle_offset = 0.0f;
+    float tibia_angle_offset = 0.0f;
 
     LegPublishers leg_lt_publishers;
     LegPublishers leg_rt_publishers;
