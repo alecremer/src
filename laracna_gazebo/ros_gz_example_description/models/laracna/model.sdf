@@ -4,24 +4,38 @@
   <model name='laracna'>
     <link name='base_link'>
       <inertial>
+        <inertia>
+          <ixx>1.6952188219386e-06</ixx>
+          <ixy>3.8328722716107099e-09</ixy>
+          <ixz>-1.68767618013713e-08</ixz>
+          <iyy>1.4858149033158899e-06</iyy>
+          <iyz>2.6793634129095399e-08</iyz>
+          <izz>1.7787742903464599e-06</izz>
+        </inertia>
         <pose>-0.000549635703823248 0.000293483149070013 0.0112605913949021 0 0 0</pose>
         <mass>0.14927705759424001</mass>
       </inertial>
       <collision name='base_link_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/base_link.STL</uri>
-          </mesh>
+            <box>
+              <size>0.14 0.14 0.032</size>
+            </box>
+          <!-- <mesh> -->
+            <!-- <scale>1 1 1</scale> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/base_link_collider.stl</uri> -->
+          <!-- </mesh> -->
         </geometry>
       </collision>
       <visual name='base_link_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
+          <!-- <box>
+            <size>0.14 0.14 0.032</size>
+          </box> -->
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/base_link.STL</uri>
+            <uri>package://ros_gz_example_description/meshes/base_link_collider.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -29,7 +43,10 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
+
+
     <joint name='coxa_lb_j' type='revolute'>
       <pose relative_to='base_link'>-0.06297700000000001 0.062553 0.0355 1.5708 0 2.3562</pose>
       <parent>base_link</parent>
@@ -37,16 +54,26 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='coxa_lb'>
       <pose relative_to='coxa_lb_j'>0 0 0 0 0 0</pose>
@@ -65,18 +92,25 @@
       <collision name='coxa_lb_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
+          <box>
+            <size>0.06 0.02 0.035</size>
+          </box>
+          <!-- <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lb.STL</uri>
-          </mesh>
+            <uri>package://ros_gz_example_description/meshes/coxa_lb_collider.stl</uri>
+          </mesh> -->
         </geometry>
       </collision>
       <visual name='coxa_lb_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
+          <!-- <box>
+            <size>0.06 0.02 0.035</size>
+          </box> -->
+          
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lb.STL</uri>
+            <uri>package://ros_gz_example_description/meshes/coxa_lb_collider.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -84,6 +118,7 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
     <joint name='femur_lb_j' type='revolute'>
       <!-- <pose relative_to='coxa_lb'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose> -->
@@ -93,16 +128,26 @@
       <axis>
         <xyz>0 0 -1</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='femur_lb'>
       <pose relative_to='femur_lb_j'>0 0 0 0 0 0</pose>
@@ -121,10 +166,14 @@
       <collision name='femur_lb_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
+          <box>
+            <size>0.10 0.038 0.013</size>
+          </box>
+          <!-- <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lb.STL</uri>
-          </mesh>
+            <uri>package://ros_gz_example_description/meshes/femur_lb_collider.stl</uri> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/femur_lb.stl</uri> -->
+          <!-- </mesh> -->
         </geometry>
       </collision>
       <visual name='femur_lb_visual'>
@@ -132,7 +181,8 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lb.STL</uri>
+            <uri>package://ros_gz_example_description/meshes/femur_lb_collider.stl</uri>
+            <!-- <uri>package://ros_gz_example_description/meshes/femur_lb.stl</uri> -->
           </mesh>
         </geometry>
         <material>
@@ -140,6 +190,7 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
     <joint name='tibia_lb_j' type='revolute'>
       <!-- <pose relative_to='femur_lb'>0.06 0 0.0355 0 0 -1.9</pose> -->
@@ -149,16 +200,26 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='tibia_lb'>
       <pose relative_to='tibia_lb_j'>0 0 0 0 0 0</pose>
@@ -177,10 +238,14 @@
       <collision name='tibia_lb_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
+          <box>
+            <size>0.138 0.0148 0.036</size>
+          </box>
+          <!-- <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lb.STL</uri>
-          </mesh>
+            <uri>package://ros_gz_example_description/meshes/tibia_lb_collider.stl</uri> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/tibia_lb.stl</uri> -->
+          <!-- </mesh> -->
         </geometry>
       </collision>
       <visual name='tibia_lb_visual'>
@@ -188,7 +253,8 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lb.STL</uri>
+            <uri>package://ros_gz_example_description/meshes/tibia_lb_collider.stl</uri>
+            <!-- <uri>package://ros_gz_example_description/meshes/tibia_lb.stl</uri> -->
           </mesh>
         </geometry>
         <material>
@@ -196,6 +262,7 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
     <joint name='coxa_lt_j' type='revolute'>
       <pose relative_to='base_link'>0.062553 0.06297700000000001 0.0355 1.5708 0 0.7854000000000001</pose>
@@ -204,16 +271,26 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='coxa_lt'>
       <pose relative_to='coxa_lt_j'>0 0 0 0 0 0</pose>
@@ -232,10 +309,14 @@
       <collision name='coxa_lt_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
+          <box>
+            <size>0.06 0.02 0.035</size>
+          </box>
+          <!-- <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lt.STL</uri>
-          </mesh>
+            <uri>package://ros_gz_example_description/meshes/coxa_lb_collider.stl</uri> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/coxa_lt.stl</uri> -->
+          <!-- </mesh> -->
         </geometry>
       </collision>
       <visual name='coxa_lt_visual'>
@@ -243,7 +324,8 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lt.STL</uri>
+            <uri>package://ros_gz_example_description/meshes/coxa_lb_collider.stl</uri>
+            <!-- <uri>package://ros_gz_example_description/meshes/coxa_lt.stl</uri> -->
           </mesh>
         </geometry>
         <material>
@@ -251,6 +333,7 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
     <joint name='femur_lt_j' type='revolute'>
       <!-- <pose relative_to='coxa_lt'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose> -->
@@ -260,16 +343,26 @@
       <axis>
         <xyz>0 0 -1</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='femur_lt'>
       <pose relative_to='femur_lt_j'>0 0 0 0 0 0</pose>
@@ -288,10 +381,14 @@
       <collision name='femur_lt_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lt.STL</uri>
-          </mesh>
+          <box>
+            <size>0.10 0.038 0.013</size>
+          </box>
+          <!-- <mesh>
+            <scale>1 1 1</scale> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/femur_lt.stl</uri> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/femur_lb_collider.stl</uri>
+          </mesh> -->
         </geometry>
       </collision>
       <visual name='femur_lt_visual'>
@@ -299,7 +396,8 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lt.STL</uri>
+            <!-- <uri>package://ros_gz_example_description/meshes/femur_lt.stl</uri> -->
+            <uri>package://ros_gz_example_description/meshes/femur_lb_collider.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -307,6 +405,7 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
     <joint name='tibia_lt_j' type='revolute'>
       <!-- <pose relative_to='femur_lt'>0.06 0 0.0355 0 0 -1.8112</pose> -->
@@ -316,16 +415,26 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='tibia_lt'>
       <pose relative_to='tibia_lt_j'>0 0 0 0 0 0</pose>
@@ -344,10 +453,14 @@
       <collision name='tibia_lt_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lt.STL</uri>
-          </mesh>
+          <box>
+            <size>0.138 0.0148 0.036</size>
+          </box>
+          <!-- <mesh>
+            <scale>1 1 1</scale> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/tibia_lt.stl</uri> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/tibia_lb_collider.stl</uri>
+          </mesh> -->
         </geometry>
       </collision>
       <visual name='tibia_lt_visual'>
@@ -355,7 +468,8 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lt.STL</uri>
+            <!-- <uri>package://ros_gz_example_description/meshes/tibia_lt.stl</uri> -->
+            <uri>package://ros_gz_example_description/meshes/tibia_lb_collider.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -363,6 +477,7 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
     <joint name='coxa_rb_j' type='revolute'>
       <pose relative_to='base_link'>-0.062553 -0.06297700000000001 0.0355 1.5708 0 -2.3562</pose>
@@ -371,16 +486,26 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='coxa_rb'>
       <pose relative_to='coxa_rb_j'>0 0 0 0 0 0</pose>
@@ -399,10 +524,14 @@
       <collision name='coxa_rb_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rb.STL</uri>
-          </mesh>
+          <box>
+            <size>0.06 0.02 0.035</size>
+          </box>
+          <!-- <mesh>
+            <scale>1 1 1</scale> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/coxa_rb.stl</uri> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/coxa_lb_collider.stl</uri>
+          </mesh> -->
         </geometry>
       </collision>
       <visual name='coxa_rb_visual'>
@@ -410,7 +539,8 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rb.STL</uri>
+            <!-- <uri>package://ros_gz_example_description/meshes/coxa_rb.stl</uri> -->
+            <uri>package://ros_gz_example_description/meshes/coxa_lb_collider.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -419,6 +549,7 @@
         </material>
       </visual>
     </link>
+    <self_collide>0</self_collide>
     <joint name='femur_rb_j' type='revolute'>
       <!-- <pose relative_to='coxa_rb'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose> -->
       <pose relative_to='coxa_rb'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.0</pose>
@@ -427,16 +558,26 @@
       <axis>
         <xyz>0 0 -1</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='femur_rb'>
       <pose relative_to='femur_rb_j'>0 0 0 0 0 0</pose>
@@ -455,10 +596,14 @@
       <collision name='femur_rb_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rb.STL</uri>
-          </mesh>
+          <box>
+            <size>0.10 0.038 0.013</size>
+          </box>
+          <!-- <mesh>
+            <scale>1 1 1</scale> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/femur_rb.stl</uri> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/femur_lb_collider.stl</uri>
+          </mesh> -->
         </geometry>
       </collision>
       <visual name='femur_rb_visual'>
@@ -466,7 +611,8 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rb.STL</uri>
+            <!-- <uri>package://ros_gz_example_description/meshes/femur_rb.stl</uri> -->
+            <uri>package://ros_gz_example_description/meshes/femur_lb_collider.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -474,6 +620,7 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
     <joint name='tibia_rb_j' type='revolute'>
       <!-- <pose relative_to='femur_rb'>0.06 0 0.0355 0 0 -1.7681</pose> -->
@@ -483,16 +630,26 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='tibia_rb'>
       <pose relative_to='tibia_rb_j'>0 0 0 0 0 0</pose>
@@ -511,10 +668,14 @@
       <collision name='tibia_rb_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
+          <box>
+            <size>0.138 0.0148 0.036</size>
+          </box>
+          <!-- <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rb.STL</uri>
-          </mesh>
+            <uri>package://ros_gz_example_description/meshes/tibia_lb_collider.stl</uri> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/tibia_rb.stl</uri> -->
+          <!-- </mesh> -->
         </geometry>
       </collision>
       <visual name='tibia_rb_visual'>
@@ -522,7 +683,8 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rb.STL</uri>
+            <uri>package://ros_gz_example_description/meshes/tibia_lb_collider.stl</uri>
+            <!-- <uri>package://ros_gz_example_description/meshes/tibia_rb.stl</uri> -->
           </mesh>
         </geometry>
         <material>
@@ -530,6 +692,7 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
     <joint name='coxa_rt_j' type='revolute'>
       <pose relative_to='base_link'>0.06297700000000001 -0.062553 0.0355 1.5708 0 -0.7854000000000001</pose>
@@ -538,16 +701,26 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='coxa_rt'>
       <pose relative_to='coxa_rt_j'>0 0 0 0 0 0</pose>
@@ -566,10 +739,14 @@
       <collision name='coxa_rt_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rt.STL</uri>
-          </mesh>
+          <box>
+            <size>0.06 0.02 0.035</size>
+          </box>
+          <!-- <mesh>
+            <scale>1 1 1</scale> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/coxa_rt.stl</uri> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/coxa_lb_collider.stl</uri>
+          </mesh> -->
         </geometry>
       </collision>
       <visual name='coxa_rt_visual'>
@@ -577,7 +754,8 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rt.STL</uri>
+            <!-- <uri>package://ros_gz_example_description/meshes/coxa_rt.stl</uri> -->
+            <uri>package://ros_gz_example_description/meshes/coxa_lb_collider.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -585,6 +763,7 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
     <joint name='femur_rt_j' type='revolute'>
       <!-- <pose relative_to='coxa_rt'>0.03814 -0.0126 -0.02153 0.0016676 0.0016676 0.7854000000000002</pose> -->
@@ -594,16 +773,26 @@
       <axis>
         <xyz>0 0 -1</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='femur_rt'>
       <pose relative_to='femur_rt_j'>0 0 0 0 0 0</pose>
@@ -622,10 +811,14 @@
       <collision name='femur_rt_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rt.STL</uri>
-          </mesh>
+          <box>
+            <size>0.10 0.038 0.013</size>
+          </box>
+          <!-- <mesh>
+            <scale>1 1 1</scale> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/femur_rt.stl</uri> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/femur_lb_collider.stl</uri>
+          </mesh> -->
         </geometry>
       </collision>
       <visual name='femur_rt_visual'>
@@ -633,7 +826,8 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rt.STL</uri>
+            <!-- <uri>package://ros_gz_example_description/meshes/femur_rt.stl</uri> -->
+            <uri>package://ros_gz_example_description/meshes/femur_lb_collider.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -641,6 +835,7 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
     <joint name='tibia_rt_j' type='revolute'>
       <!-- <pose relative_to='femur_rt'>0.06 0 0.0355 0 0 -1.7368</pose> -->
@@ -650,16 +845,26 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <lower>-10000000000000000</lower>
-          <upper>10000000000000000</upper>
+          <lower>-3.1416</lower>
+          <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.10000000000000001</damping>
-          <friction>0.10000000000000001</friction>
+          <damping>0.01</damping>
+          <friction>0.01</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
+      <physics>
+          <ode>
+              <implicit_spring_damper>1</implicit_spring_damper>
+              <cfm_damping>1</cfm_damping>
+              <limit>
+                  <cfm>0</cfm>
+                  <erp>0.2</erp>
+              </limit>
+          </ode>
+      </physics>
     </joint>
     <link name='tibia_rt'>
       <pose relative_to='tibia_rt_j'>0 0 0 0 0 0</pose>
@@ -678,10 +883,14 @@
       <collision name='tibia_rt_collision'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh>
+          <box>
+            <size>0.138 0.0148 0.036</size>
+          </box>
+          <!-- <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rt.STL</uri>
-          </mesh>
+            <uri>package://ros_gz_example_description/meshes/tibia_lb_collider.stl</uri> -->
+            <!-- <uri>package://ros_gz_example_description/meshes/tibia_rt.stl</uri> -->
+          <!-- </mesh> -->
         </geometry>
       </collision>
       <visual name='tibia_rt_visual'>
@@ -689,7 +898,8 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rt.STL</uri>
+            <uri>package://ros_gz_example_description/meshes/tibia_lb_collider.stl</uri>
+            <!-- <uri>package://ros_gz_example_description/meshes/tibia_rt.stl</uri> -->
           </mesh>
         </geometry>
         <material>
@@ -697,6 +907,7 @@
           <ambient>0.990196 1 1 1</ambient>
         </material>
       </visual>
+      <self_collide>0</self_collide>
     </link>
 
     

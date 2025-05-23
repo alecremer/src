@@ -7,19 +7,60 @@
     gz topic -e -t /model/diff_drive/odometry
     ros2 topic echo /model/diff_drive/odometry
 -->
+
 <sdf version="1.8">
   <world name="demo">
-    <physics type="ode">
-      <max_step_size>0.001</max_step_size>
-      <real_time_update_rate>1000</real_time_update_rate>
-      <real_time_factor>1.0</real_time_factor>
-    </physics>
+    <ignition>
+      <multithreading>true</multithreading>
+    </ignition>
 
+    <!-- <plugin
+  filename="ignition-gazebo-render-engine-system"
+  name="ignition::gazebo::systems::RenderEngine">
+  <render_engine>ogre2</render_engine>
+</plugin> -->
+
+
+    <!-- <physics name="default_physics" type="ignored"> -->
+    <!-- <physics name="default_physics" type="tpe"> -->
+    <physics name="default_physics" type="ignored">
+      <!-- Aumente o passo máximo para acelerar a simulação (mas sem perder muita precisão) -->
+      <max_step_size>0.05</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <!-- Taxa de atualização em tempo real (quanto maior, mais "rápida" a simulação, se suportado pela CPU) -->
+      <real_time_update_rate>100</real_time_update_rate>
+    </physics>
 
     <plugin
       filename="ignition-gazebo-physics-system"
-      name="ignition::gazebo::systems::Physics">
+      name="gz::sim::systems::Physics">
     </plugin>
+    <plugin
+      filename="ignition-gazebo-user-commands-system"
+      name="gz::sim::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+    
+    <!-- <ignition>
+      <multithreading>true</multithreading>
+    </ignition> -->
+
+    <!-- <plugin
+      filename="ignition-gazebo-physics-system"
+      name="ignition::gazebo::systems::Physics">
+    </plugin> -->
+
+    
+
+    <!-- <plugin name="ignition::gazebo::systems::RenderEnginePlugin"
+        filename="ignition-gazebo-render-engine-system">
+      <render_engine>ogre2</render_engine>
+    </plugin> -->
+
+<!-- 
     <plugin
       filename="ignition-gazebo-sensors-system"
       name="ignition::gazebo::systems::Sensors">
@@ -28,20 +69,24 @@
     <plugin
       filename="ignition-gazebo-scene-broadcaster-system"
       name="ignition::gazebo::systems::SceneBroadcaster">
-    </plugin>
-    <plugin
+    </plugin> -->
+    <!-- <plugin
       filename="ignition-gazebo-user-commands-system"
       name="ignition::gazebo::systems::UserCommands">
-    </plugin>
-    <plugin
+    </plugin> -->
+    <!-- <plugin
       filename="BasicSystem"
       name="ros_gz_example_gazebo::BasicSystem">
     </plugin>
     <plugin
       filename="FullSystem"
       name="ros_gz_example_gazebo::FullSystem">
-    </plugin>
+    </plugin> -->
 
+<!-- 
+    <ignition>
+      <multithreading>true</multithreading>
+    </ignition> -->
     <light name="sun" type="directional">
       <cast_shadows>true</cast_shadows>
       <pose>0 0 10 0 0 0</pose>
@@ -87,10 +132,11 @@
  
 
     <model name="laracna">
-      <self_collide>true</self_collide>
-      <!-- <self_collide>false</self_collide> -->
+      <!-- <self_collide>true</self_collide> -->
+      <self_collide>false</self_collide>
       <pose>0 0 0.35 0 0 0</pose>
-      <include merge="true">
+      <!-- <include merge="true"> -->
+      <include merge="false">
         <uri>package://ros_gz_example_description/models/laracna</uri>
       </include>
 
@@ -98,7 +144,7 @@
 
 
       <!--Coxa -->
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      <!-- <plugin filename="libignition-gazebo-joint-position-controller-system.so"
         name="ignition::gazebo::systems::JointPositionController">
         <joint_name>coxa_rb_j</joint_name>
         <topic>/model/laracna/joint/coxa_rb_j/cmd_pos</topic>
@@ -152,11 +198,11 @@
         <i_min>-1.0</i_min>
         <cmd_max>1.0</cmd_max>
         <cmd_min>-1.0</cmd_min>
-      </plugin>
+      </plugin> -->
 
 
       <!-- Femur -->
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      <!-- <plugin filename="libignition-gazebo-joint-position-controller-system.so"
         name="ignition::gazebo::systems::JointPositionController">
         <joint_name>femur_lb_j</joint_name>
         <topic>/model/laracna/joint/femur_lb_j/cmd_pos</topic>
@@ -210,11 +256,11 @@
         <i_min>-1.0</i_min>
         <cmd_max>1.0</cmd_max>
         <cmd_min>-1.0</cmd_min>
-      </plugin>
+      </plugin> -->
 
 
       <!-- Tibia -->
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      <!-- <plugin filename="libignition-gazebo-joint-position-controller-system.so"
         name="ignition::gazebo::systems::JointPositionController">
         <joint_name>tibia_lt_j</joint_name>
         <topic>/model/laracna/joint/tibia_lt_j/cmd_pos</topic>
@@ -290,11 +336,11 @@
       <plugin
         filename="ignition-gazebo-joint-state-publisher-system"
         name="ignition::gazebo::systems::JointStatePublisher">
-      </plugin>
+      </plugin> -->
 
 
 
-    </model>
+    </model> 
 
   </world>
 </sdf>

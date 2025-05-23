@@ -26,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/base_link.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/base_link.stl" />
       </geometry>
       <material
         name="">
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/base_link.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/base_link.stl" />
       </geometry>
     </collision>
   </link>
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lt.stl" />
       </geometry>
       <material
         name="">
@@ -80,7 +80,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lt.stl" />
       </geometry>
     </collision>
   </link>
@@ -122,7 +122,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lt.stl" />
       </geometry>
       <material
         name="">
@@ -136,7 +136,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lt.stl" />
       </geometry>
     </collision>
   </link>
@@ -178,7 +178,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lt.stl" />
       </geometry>
       <material
         name="">
@@ -192,7 +192,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lt.stl" />
       </geometry>
     </collision>
   </link>
@@ -234,7 +234,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rt.stl" />
       </geometry>
       <material
         name="">
@@ -248,7 +248,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rt.stl" />
       </geometry>
     </collision>
   </link>
@@ -290,7 +290,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rt.stl" />
       </geometry>
       <material
         name="">
@@ -304,7 +304,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rt.stl" />
       </geometry>
     </collision>
   </link>
@@ -346,7 +346,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rt.stl" />
       </geometry>
       <material
         name="">
@@ -360,7 +360,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rt.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rt.stl" />
       </geometry>
     </collision>
   </link>
@@ -402,7 +402,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lb.stl" />
       </geometry>
       <material
         name="">
@@ -416,7 +416,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_lb.stl" />
       </geometry>
     </collision>
   </link>
@@ -458,7 +458,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lb.stl" />
       </geometry>
       <material
         name="">
@@ -472,7 +472,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_lb.stl" />
       </geometry>
     </collision>
   </link>
@@ -514,7 +514,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lb.stl" />
       </geometry>
       <material
         name="">
@@ -528,7 +528,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_lb.stl" />
       </geometry>
     </collision>
   </link>
@@ -570,7 +570,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rb.stl" />
       </geometry>
       <material
         name="">
@@ -584,7 +584,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/coxa_rb.stl" />
       </geometry>
     </collision>
   </link>
@@ -626,7 +626,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rb.stl" />
       </geometry>
       <material
         name="">
@@ -640,7 +640,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/femur_rb.stl" />
       </geometry>
     </collision>
   </link>
@@ -682,7 +682,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rb.stl" />
       </geometry>
       <material
         name="">
@@ -696,7 +696,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rb.STL" />
+          filename="/home/ale/laracna_ws/src/laracna_sim/meshes/tibia_rb.stl" />
       </geometry>
     </collision>
   </link>

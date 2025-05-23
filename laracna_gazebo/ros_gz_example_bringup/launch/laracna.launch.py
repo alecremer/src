@@ -21,7 +21,7 @@ from launch.actions import DeclareLaunchArgument
 from launch.actions import IncludeLaunchDescription
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, TextSubstitution
 
 from launch_ros.actions import Node
 
@@ -37,20 +37,46 @@ def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
 
     # Load the SDF file from "description" package
-    sdf_file  =  os.path.join(pkg_project_description, 'models', 'laracna', 'laracna.sdf')
+    sdf_file  =  os.path.join(pkg_project_description, 'models', 'laracna', 'model.sdf')
     with open(sdf_file, 'r') as infp:
         robot_desc = infp.read()
 
     # Setup to launch the simulator and Gazebo world
+    # gz_sim = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource(
+    #         os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
+    #     launch_arguments={'gz_args': [PathJoinSubstitution([
+    #         pkg_project_gazebo,
+    #         'worlds',
+    #         'laracna_world.sdf'
+    #     ])
+    #     ]}.items(),
+    # )
+
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
-        launch_arguments={'gz_args': PathJoinSubstitution([
+        launch_arguments={'gz_args': [PathJoinSubstitution([
             pkg_project_gazebo,
             'worlds',
             'laracna_world.sdf'
-        ])}.items(),
+        ]), 
+        TextSubstitution(text=' '),  # Adiciona um espaço explícito
+        TextSubstitution(text='--render-engine ogre2'),
+        TextSubstitution(text=' '),  # Adiciona um espaço explícito
+        TextSubstitution(text='-v')
+        ]}.items(),
     )
+
+
+    # gz_sim={'gz_args': [
+    # PathJoinSubstitution([
+    #     pkg_project_gazebo,
+    #     'worlds',
+    #     'laracna_world.sdf'
+    # ]),' --render-engine ogre2'
+    # ]}.items(),
+
 
     # Takes the description and joint angles as inputs and publishes the 3D poses of the robot links
     robot_state_publisher = Node(
