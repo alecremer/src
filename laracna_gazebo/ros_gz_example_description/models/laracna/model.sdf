@@ -15,8 +15,9 @@
         <pose>-0.000549635703823248 0.000293483149070013 0.0112605913949021 0 0 0</pose>
         <mass>0.14927705759424001</mass>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='base_link_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>-0.000549635703823248 0.000293483149070013 0.0112605913949021 0 0 0</pose>
         <geometry>
             <box>
               <size>0.14 0.14 0.032</size>
@@ -89,8 +90,11 @@
           <izz>1.7787742903464599e-06</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='coxa_lb_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <!-- <pose>0.0311676418899572 -0.0171857800823059 -0.000875524395071652 0 0 0</pose> -->
+        <pose>0.03 0 0 0 0 0</pose>
+        <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
             <size>0.06 0.02 0.035</size>
@@ -153,7 +157,7 @@
       <pose relative_to='femur_lb_j'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>0.0300000000000009 -4.00077502987761e-06 0.0177499999999991 0 0 0</pose>
-        <mass>0.0087586509816886208</mass>
+        <mass>0.08</mass>
         <inertia>
           <ixx>2.35107438626411e-07</ixx>
           <ixy>-3.6395946952333199e-22</ixy>
@@ -163,8 +167,11 @@
           <izz>1.32562067354555e-06</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='femur_lb_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <!-- <pose>0.0300000000000009 -4.00077502987761e-06 0.0177499999999991 0 0 0</pose> -->
+        <!-- <pose>0 0 0 0 0 0</pose> -->
+        <pose>0.05 0 0 0 0 0</pose>
         <geometry>
           <box>
             <size>0.10 0.038 0.013</size>
@@ -235,8 +242,11 @@
           <izz>1.9115314259691301e-05</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='tibia_lb_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <!-- <pose>0.0253809510265003 0.00775604947350703 -0.0209014173200577 0 0 0</pose> -->
+        <!-- <pose>0 0 0 0 0 0</pose> -->
+        <pose>0.069 0 0 0 0 0</pose>
         <geometry>
           <box>
             <size>0.138 0.0148 0.036</size>
@@ -275,8 +285,8 @@
           <upper>3.1416</upper>
         </limit>
         <dynamics>
-          <damping>0.01</damping>
-          <friction>0.01</friction>
+          <damping>0.001</damping>
+          <friction>0.001</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
@@ -298,16 +308,24 @@
         <pose>0.0311676418899575 -0.0171857800823059 -0.000875524395070736 0 0 0</pose>
         <mass>0.016883587648962601</mass>
         <inertia>
-          <ixx>1.6952188219386e-06</ixx>
+          <!-- <ixx>1.6952188219386e-06</ixx>
           <ixy>3.8328722716109299e-09</ixy>
           <ixz>-1.6876761801371101e-08</ixz>
           <iyy>1.4858149033158899e-06</iyy>
           <iyz>2.6793634129094899e-08</iyz>
-          <izz>1.7787742903464599e-06</izz>
+          <izz>1.7787742903464599e-06</izz> -->
+          <ixx>2.29e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.79e-6</iyy>
+          <iyz>0</iyz>
+          <izz>5.63e-6</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='coxa_lt_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.0311676418899575 -0.0171857800823059 -0.000875524395070736 0 0 0</pose>
+        <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
             <size>0.06 0.02 0.035</size>
@@ -368,18 +386,22 @@
       <pose relative_to='femur_lt_j'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>0.0300000000000001 -4.00077503040497e-06 0.01775 0 0 0</pose>
-        <mass>0.0087586509816886</mass>
+        <!-- <mass>0.0087586509816886</mass> -->
+        <mass>0.08</mass>
         <inertia>
-          <ixx>2.35107438626411e-07</ixx>
-          <ixy>5.2277814713351302e-22</ixy>
-          <ixz>-3.1996158667403002e-09</ixz>
-          <iyy>1.10345188527737e-06</iyy>
-          <iyz>-4.4998625322884696e-22</iyz>
-          <izz>1.32562067354555e-06</izz>
+          
+          <ixx>1.075e-05</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>6.779e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>7.629e-05</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='femur_lt_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.0300000000000001 -4.00077503040497e-06 0.01775 0 0 0</pose>
+        <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
             <size>0.10 0.038 0.013</size>
@@ -450,8 +472,10 @@
           <izz>1.9115318342821998e-05</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='tibia_lt_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.0253797905900474 0.00775572324591811 -0.0209014190388057 0 0 0</pose>
+        <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
             <size>0.138 0.0148 0.036</size>
@@ -521,8 +545,10 @@
           <izz>1.7787742903464599e-06</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='coxa_rb_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.0311676418899572 -0.0171857800823059 -0.000875524395071652 0 0 0</pose>
+        <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
             <size>0.06 0.02 0.035</size>
@@ -583,7 +609,7 @@
       <pose relative_to='femur_rb_j'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>0.0300000000000003 -4.00077503072416e-06 0.0177499999999999 0 0 0</pose>
-        <mass>0.0087586509816885896</mass>
+        <mass>0.08</mass>
         <inertia>
           <ixx>2.35107438626411e-07</ixx>
           <ixy>4.8307347773096797e-22</ixy>
@@ -593,8 +619,10 @@
           <izz>1.32562067354555e-06</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='femur_rb_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.0300000000000003 -4.00077503072416e-06 0.0177499999999999 0 0 0</pose>
+        <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
             <size>0.10 0.038 0.013</size>
@@ -665,8 +693,10 @@
           <izz>1.9115321876941701e-05</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='tibia_rb_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.0253791910136747 0.00775560067495526 -0.0209014204080387 0 0 0</pose>
+        <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
             <size>0.138 0.0148 0.036</size>
@@ -736,8 +766,10 @@
           <izz>1.7787742903464599e-06</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='coxa_rt_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.0311676418899572 -0.0171857800823059 -0.000875524395071665 0 0 0</pose>
+        <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
             <size>0.06 0.02 0.035</size>
@@ -798,18 +830,26 @@
       <pose relative_to='femur_rt_j'>0 0 0 0 0 0</pose>
       <inertial>
         <pose>0.0300000000000002 -4.00077503043272e-06 0.0177500000000002 0 0 0</pose>
-        <mass>0.0087586509816886104</mass>
+        <mass>0.08</mass>
         <inertia>
-          <ixx>2.35107438626411e-07</ixx>
+          <!-- <ixx>2.35107438626411e-07</ixx>
           <ixy>3.1101991031993798e-22</ixy>
           <ixz>-3.1996158667405301e-09</ixz>
           <iyy>1.10345188527737e-06</iyy>
           <iyz>-5.2939559203393795e-23</iyz>
-          <izz>1.32562067354555e-06</izz>
+          <izz>1.32562067354555e-06</izz> -->
+          <ixx>1.075e-05</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>6.779e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>7.629e-05</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='femur_rt_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.0300000000000002 -4.00077503043272e-06 0.0177500000000002 0 0 0</pose>
+        <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
             <size>0.10 0.038 0.013</size>
@@ -880,8 +920,10 @@
           <izz>1.9115305836752498e-05</izz>
         </inertia>
       </inertial>
+      <self_collide>0</self_collide>
       <collision name='tibia_rt_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.0253787836129874 0.00775552687574976 -0.0209014202651868 0 0 0</pose>
+        <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
             <size>0.138 0.0148 0.036</size>
@@ -910,7 +952,218 @@
       <self_collide>0</self_collide>
     </link>
 
+
+
+
     
+
+    <!--Coxa -->
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>coxa_rb_j</joint_name>
+      <!-- <topic>/model/laracna/joint/coxa_rb_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <!-- <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>0.01</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min> -->
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>coxa_lt_j</joint_name>
+      <!-- <topic>/model/laracna/joint/coxa_lt_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <!-- <p_gain>1000.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>0.01</d_gain>
+      <i_max>1000.0</i_max>
+      <i_min>-1000.0</i_min>
+      <cmd_max>1000.0</cmd_max>
+      <cmd_min>-1000.0</cmd_min> -->
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>coxa_rt_j</joint_name>
+      <!-- <topic>/model/laracna/joint/coxa_rt_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>coxa_lb_j</joint_name>
+      <!-- <topic>/model/laracna/joint/coxa_lb_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+
+    <!-- Femur -->
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>femur_lb_j</joint_name>
+      <!-- <topic>/model/laracna/joint/femur_lb_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>femur_lt_j</joint_name>
+      <!-- <topic>/model/laracna/joint/femur_lt_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>femur_rt_j</joint_name>
+      <!-- <topic>/model/laracna/joint/femur_rt_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>femur_rb_j</joint_name>
+      <!-- <topic>/model/laracna/joint/femur_rb_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+
+    <!-- Tibia -->
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>tibia_lt_j</joint_name>
+      <!-- <topic>/model/laracna/joint/tibia_lt_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>tibia_rt_j</joint_name>
+      <!-- <topic>/model/laracna/joint/tibia_rt_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>tibia_rb_j</joint_name>
+      <!-- <topic>/model/laracna/joint/tibia_rb_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+    <plugin filename="libignition-gazebo-joint-position-controller-system.so"
+      name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>tibia_lb_j</joint_name>
+      <!-- <topic>/model/laracna/joint/tibia_lb_j/cmd_pos</topic> -->
+      <initial_position>0.0</initial_position>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>1.0</d_gain>
+      <i_max>10.0</i_max>
+      <i_min>-10.0</i_min>
+      <cmd_max>10.0</cmd_max>
+      <cmd_min>-10.0</cmd_min>
+    </plugin>
+
+    <plugin
+      filename="ignition-gazebo-joint-state-publisher-system"
+      name="ignition::gazebo::systems::JointStatePublisher">
+    </plugin>
+
+    <plugin
+      filename="ignition-gazebo-pose-publisher-system"
+      name="ignition::gazebo::systems::PosePublisher">
+      <publish_link_pose>true</publish_link_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <static_publisher>true</static_publisher>
+      <static_update_frequency>1</static_update_frequency>
+    </plugin>
+    
+    <plugin
+      filename="ignition-gazebo-odometry-publisher-system"
+      name="ignition::gazebo::systems::OdometryPublisher">
+      <odom_frame>laracna/odom</odom_frame>
+      <robot_base_frame>laracna</robot_base_frame>
+    </plugin>
 
   </model>
 </sdf>

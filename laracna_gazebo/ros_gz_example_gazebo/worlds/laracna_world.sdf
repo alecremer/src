@@ -21,14 +21,15 @@
 </plugin> -->
 
 
-    <!-- <physics name="default_physics" type="ignored"> -->
+    <physics name="default_physics" type="ode">
     <!-- <physics name="default_physics" type="tpe"> -->
-    <physics name="default_physics" type="ignored">
+    <!-- <physics name="default_physics" type="ignored"> -->
       <!-- Aumente o passo máximo para acelerar a simulação (mas sem perder muita precisão) -->
-      <max_step_size>0.05</max_step_size>
+      <!-- <max_step_size>0.05</max_step_size> -->
+      <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
       <!-- Taxa de atualização em tempo real (quanto maior, mais "rápida" a simulação, se suportado pela CPU) -->
-      <real_time_update_rate>100</real_time_update_rate>
+      <real_time_update_rate>1000</real_time_update_rate>
     </physics>
 
     <plugin
@@ -143,201 +144,17 @@
      
 
 
-      <!--Coxa -->
-      <!-- <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>coxa_rb_j</joint_name>
-        <topic>/model/laracna/joint/coxa_rb_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin>
-
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>coxa_lt_j</joint_name>
-        <topic>/model/laracna/joint/coxa_lt_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin>
-
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>coxa_rt_j</joint_name>
-        <topic>/model/laracna/joint/coxa_rt_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin>
-
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>coxa_lb_j</joint_name>
-        <topic>/model/laracna/joint/coxa_lb_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin> -->
-
-
-      <!-- Femur -->
-      <!-- <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>femur_lb_j</joint_name>
-        <topic>/model/laracna/joint/femur_lb_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>    
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin>
-
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>femur_lt_j</joint_name>
-        <topic>/model/laracna/joint/femur_lt_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>    
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin>
-
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>femur_rt_j</joint_name>
-        <topic>/model/laracna/joint/femur_rt_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>    
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin>
-
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>femur_rb_j</joint_name>
-        <topic>/model/laracna/joint/femur_rb_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>    
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin> -->
-
-
-      <!-- Tibia -->
-      <!-- <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>tibia_lt_j</joint_name>
-        <topic>/model/laracna/joint/tibia_lt_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>    
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin>
-
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>tibia_rt_j</joint_name>
-        <topic>/model/laracna/joint/tibia_rt_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>    
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin>
-
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>tibia_rb_j</joint_name>
-        <topic>/model/laracna/joint/tibia_rb_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>    
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin>
-
-      <plugin filename="libignition-gazebo-joint-position-controller-system.so"
-        name="ignition::gazebo::systems::JointPositionController">
-        <joint_name>tibia_lt_j</joint_name>
-        <topic>/model/laracna/joint/tibia_lt_j/cmd_pos</topic>
-        <initial_position>0.0</initial_position>
-        <p_gain>1.0</p_gain>
-        <i_gain>0.1</i_gain>
-        <d_gain>0.01</d_gain>
-        <i_max>1.0</i_max>    
-        <i_min>-1.0</i_min>
-        <cmd_max>1.0</cmd_max>
-        <cmd_min>-1.0</cmd_min>
-      </plugin>
       
       
-      <plugin
-        filename="ignition-gazebo-pose-publisher-system"
-        name="ignition::gazebo::systems::PosePublisher">
-        <publish_link_pose>true</publish_link_pose>
-        <use_pose_vector_msg>true</use_pose_vector_msg>
-        <static_publisher>true</static_publisher>
-        <static_update_frequency>1</static_update_frequency>
-      </plugin>
       
-      <plugin
-        filename="ignition-gazebo-odometry-publisher-system"
-        name="ignition::gazebo::systems::OdometryPublisher">
-        <odom_frame>laracna/odom</odom_frame>
-        <robot_base_frame>laracna</robot_base_frame>
-      </plugin>
+      
 
-      <plugin
-        filename="ignition-gazebo-joint-state-publisher-system"
-        name="ignition::gazebo::systems::JointStatePublisher">
+      
+
+
+      <!-- <plugin filename="libignition-gazebo-ros2-control-system.so" name="ignition::gazebo::systems::Ros2ControlSystem">
+        <robot_description>robot_description</robot_description>
       </plugin> -->
-
 
 
     </model> 
