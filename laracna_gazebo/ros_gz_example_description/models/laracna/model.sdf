@@ -324,7 +324,8 @@
       </inertial>
       <self_collide>0</self_collide>
       <collision name='coxa_lt_collision'>
-        <pose>0.0311676418899575 -0.0171857800823059 -0.000875524395070736 0 0 0</pose>
+        <!-- <pose>0.0311676418899575 -0.0171857800823059 -0.000875524395070736 0 0 0</pose> -->
+        <pose>0.03 0 0 0 0 0</pose>
         <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
@@ -400,7 +401,8 @@
       </inertial>
       <self_collide>0</self_collide>
       <collision name='femur_lt_collision'>
-        <pose>0.0300000000000001 -4.00077503040497e-06 0.01775 0 0 0</pose>
+        <pose>0.05 0 0 0 0 0</pose>
+        <!-- <pose>0.0300000000000001 -4.00077503040497e-06 0.01775 0 0 0</pose> -->
         <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
@@ -474,7 +476,8 @@
       </inertial>
       <self_collide>0</self_collide>
       <collision name='tibia_lt_collision'>
-        <pose>0.0253797905900474 0.00775572324591811 -0.0209014190388057 0 0 0</pose>
+        <!-- <pose>0.0253797905900474 0.00775572324591811 -0.0209014190388057 0 0 0</pose> -->
+        <pose>0.069 0 0 0 0 0</pose>
         <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
@@ -547,7 +550,8 @@
       </inertial>
       <self_collide>0</self_collide>
       <collision name='coxa_rb_collision'>
-        <pose>0.0311676418899572 -0.0171857800823059 -0.000875524395071652 0 0 0</pose>
+        <!-- <pose>0.0311676418899572 -0.0171857800823059 -0.000875524395071652 0 0 0</pose> -->
+        <pose>0.03 0 0 0 0 0</pose>
         <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
@@ -621,7 +625,8 @@
       </inertial>
       <self_collide>0</self_collide>
       <collision name='femur_rb_collision'>
-        <pose>0.0300000000000003 -4.00077503072416e-06 0.0177499999999999 0 0 0</pose>
+        <pose>0.05 0 0 0 0 0</pose>
+        <!-- <pose>0.0300000000000003 -4.00077503072416e-06 0.0177499999999999 0 0 0</pose> -->
         <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
@@ -695,7 +700,8 @@
       </inertial>
       <self_collide>0</self_collide>
       <collision name='tibia_rb_collision'>
-        <pose>0.0253791910136747 0.00775560067495526 -0.0209014204080387 0 0 0</pose>
+        <!-- <pose>0.0253791910136747 0.00775560067495526 -0.0209014204080387 0 0 0</pose> -->
+        <pose>0.069 0 0 0 0 0</pose>
         <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
@@ -768,7 +774,8 @@
       </inertial>
       <self_collide>0</self_collide>
       <collision name='coxa_rt_collision'>
-        <pose>0.0311676418899572 -0.0171857800823059 -0.000875524395071665 0 0 0</pose>
+        <!-- <pose>0.0311676418899572 -0.0171857800823059 -0.000875524395071665 0 0 0</pose> -->
+        <pose>0.03 0 0 0 0 0</pose>
         <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
@@ -848,7 +855,8 @@
       </inertial>
       <self_collide>0</self_collide>
       <collision name='femur_rt_collision'>
-        <pose>0.0300000000000002 -4.00077503043272e-06 0.0177500000000002 0 0 0</pose>
+        <!-- <pose>0.0300000000000002 -4.00077503043272e-06 0.0177500000000002 0 0 0</pose> -->
+        <pose>0.05 0 0 0 0 0</pose>
         <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
@@ -922,7 +930,8 @@
       </inertial>
       <self_collide>0</self_collide>
       <collision name='tibia_rt_collision'>
-        <pose>0.0253787836129874 0.00775552687574976 -0.0209014202651868 0 0 0</pose>
+        <!-- <pose>0.0253787836129874 0.00775552687574976 -0.0209014202651868 0 0 0</pose> -->
+        <pose>0.069 0 0 0 0 0</pose>
         <!-- <pose>0 0 0 0 0 0</pose> -->
         <geometry>
           <box>
@@ -970,13 +979,13 @@
       <i_min>-1.0</i_min>
       <cmd_max>1.0</cmd_max>
       <cmd_min>-1.0</cmd_min> -->
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
@@ -991,13 +1000,13 @@
       <i_min>-1000.0</i_min>
       <cmd_max>1000.0</cmd_max>
       <cmd_min>-1000.0</cmd_min> -->
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
@@ -1005,13 +1014,13 @@
       <joint_name>coxa_rt_j</joint_name>
       <!-- <topic>/model/laracna/joint/coxa_rt_j/cmd_pos</topic> -->
       <initial_position>0.0</initial_position>
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
@@ -1019,13 +1028,13 @@
       <joint_name>coxa_lb_j</joint_name>
       <!-- <topic>/model/laracna/joint/coxa_lb_j/cmd_pos</topic> -->
       <initial_position>0.0</initial_position>
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
 
@@ -1035,13 +1044,13 @@
       <joint_name>femur_lb_j</joint_name>
       <!-- <topic>/model/laracna/joint/femur_lb_j/cmd_pos</topic> -->
       <initial_position>0.0</initial_position>
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
@@ -1049,13 +1058,13 @@
       <joint_name>femur_lt_j</joint_name>
       <!-- <topic>/model/laracna/joint/femur_lt_j/cmd_pos</topic> -->
       <initial_position>0.0</initial_position>
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
@@ -1063,13 +1072,13 @@
       <joint_name>femur_rt_j</joint_name>
       <!-- <topic>/model/laracna/joint/femur_rt_j/cmd_pos</topic> -->
       <initial_position>0.0</initial_position>
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
@@ -1077,13 +1086,13 @@
       <joint_name>femur_rb_j</joint_name>
       <!-- <topic>/model/laracna/joint/femur_rb_j/cmd_pos</topic> -->
       <initial_position>0.0</initial_position>
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
 
@@ -1093,13 +1102,13 @@
       <joint_name>tibia_lt_j</joint_name>
       <!-- <topic>/model/laracna/joint/tibia_lt_j/cmd_pos</topic> -->
       <initial_position>0.0</initial_position>
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
@@ -1107,13 +1116,13 @@
       <joint_name>tibia_rt_j</joint_name>
       <!-- <topic>/model/laracna/joint/tibia_rt_j/cmd_pos</topic> -->
       <initial_position>0.0</initial_position>
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
@@ -1121,13 +1130,13 @@
       <joint_name>tibia_rb_j</joint_name>
       <!-- <topic>/model/laracna/joint/tibia_rb_j/cmd_pos</topic> -->
       <initial_position>0.0</initial_position>
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
@@ -1135,13 +1144,13 @@
       <joint_name>tibia_lb_j</joint_name>
       <!-- <topic>/model/laracna/joint/tibia_lb_j/cmd_pos</topic> -->
       <initial_position>0.0</initial_position>
-      <p_gain>1.0</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>1.0</d_gain>
-      <i_max>10.0</i_max>
-      <i_min>-10.0</i_min>
-      <cmd_max>10.0</cmd_max>
-      <cmd_min>-10.0</cmd_min>
+      <p_gain>0.1</p_gain>
+      <i_gain>0.001</i_gain>
+      <d_gain>0.001</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>1.0</cmd_max>
+      <cmd_min>-1.0</cmd_min>
     </plugin>
 
     <plugin
