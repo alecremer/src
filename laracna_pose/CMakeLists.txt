@@ -11,6 +11,17 @@ find_package(ament_cmake REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 
+include_directories(include)
+
+add_executable(pose_node 
+  src/publisher_creator.cpp
+  src/leg_publisher.cpp
+  src/main.cpp
+)
+
+
+ament_target_dependencies(pose_node rclcpp std_msgs)
+
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -31,6 +42,9 @@ endif()
 install(
   DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}
+)
+install(TARGETS pose_node
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 # Install nodes
