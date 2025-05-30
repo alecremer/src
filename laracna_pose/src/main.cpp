@@ -1,19 +1,39 @@
-// #include "rclcpp/rclcpp.hpp"
-// #include "std_msgs/msg/string.hpp"
-// #include <string>
+#include <string>
+#include <chrono>
+#include <memory>
 
-// using namespace std;
+#include "rclcpp/rclcpp.hpp"
+#include "std_msgs/msg/string.hpp"
+#include "std_msgs/msg/float32.hpp"
 
-// class PoseController
-// {
-// public:
-//     void wake_up()
+using namespace std::chrono_literals;
 
-// };
+class SimplePublisher : public rclcpp::Node{
+public:
+    SimplePublisher() : Node("simple_publisher"){
+        publisher_obj = this->create_publisher<std_msgs::msg::Float32>("leg_rt_coxar", 20); // buffer size 20
 
+        // interval between trigger callbacks
+        timer = this->create_wall_timer(1s, std::bind(&SimplePublisher::callback_function, this));
+    }
+private:
+    int counter = 0;
+    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr pub_joint_rt_coxar;
+    void callback_function(){
+        counter++;
+        auto message = std_msgs::msg::String();
+        message.data = "Hello World " + std::to_string(counter);
+        RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
+        publisher_obj->publish(message);
+    }
+    rclcpp::TimerBase::SharedPtr timer;
 
-// class Leg:
-// {
-// public:
+};
 
-// }
+int main(int argc, char **argv){
+
+    rclcpp::init(argc, argv);
+    rclcpp::spin(std::make_shared<SimplePublisher>());
+    rclcpp::shutdown();
+    return 0;
+}
