@@ -12,9 +12,8 @@ class LegPublisher {
 
 public:
 
-    LegPublisher(const LegPublisherConfig& topics, Node::SharedPtr node);
-    LegPublisher() = delete;
-
+    LegPublisher(const LegPublisherConfig& topics, shared_ptr<Node> node);
+    LegPublisher(void){};
 private:
 
     Publisher<std_msgs::msg::Float32>::SharedPtr pub_joint_coxar;

@@ -11,11 +11,14 @@ class PublisherCreator{
 
 public:
 
-    PublisherCreator(Node::SharedPtr node);
+    PublisherCreator(shared_ptr<Node> node);
 
 
 private:
-
+    LegPublisher leg_rt_publisher;
+    LegPublisher leg_rb_publisher;
+    LegPublisher leg_lt_publisher;
+    LegPublisher leg_lb_publisher;
 };
 
 #endif // PUBLISHER_CREATOR_HPP

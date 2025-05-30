@@ -4,7 +4,7 @@
 using namespace rclcpp;
 
 
-PublisherCreator::PublisherCreator(Node::SharedPtr node){
+PublisherCreator::PublisherCreator(shared_ptr<Node> node){
 
     LegPublisherConfig leg_rt_config, leg_rb_config, leg_lt_config, leg_lb_config;
 
@@ -24,10 +24,10 @@ PublisherCreator::PublisherCreator(Node::SharedPtr node){
     leg_lb_config.topic_joint_femur = "/hw_sim/leg_lb/femur/move";
     leg_lb_config.topic_joint_tibia = "/hw_sim/leg_lb/tibia/move";
 
-    LegPublisher leg_rt_publisher(leg_rt_config, node);
-    LegPublisher leg_rb_publisher(leg_rb_config, node);
-    LegPublisher leg_lt_publisher(leg_lt_config, node);
-    LegPublisher leg_lb_publisher(leg_lb_config, node);
+    leg_rt_publisher = LegPublisher(leg_rt_config, node);
+    leg_rb_publisher = LegPublisher(leg_rb_config, node);
+    leg_lt_publisher = LegPublisher(leg_lt_config, node);
+    leg_lb_publisher = LegPublisher(leg_lb_config, node);
 
 }
 
