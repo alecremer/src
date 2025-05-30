@@ -970,7 +970,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>coxa_rb_j</joint_name>
-      <!-- <topic>/model/laracna/joint/coxa_rb_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/coxa_rb_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <!-- <p_gain>1.0</p_gain>
       <i_gain>0.1</i_gain>
@@ -991,7 +991,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>coxa_lt_j</joint_name>
-      <!-- <topic>/model/laracna/joint/coxa_lt_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/coxa_lt_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <!-- <p_gain>1000.0</p_gain>
       <i_gain>0.1</i_gain>
@@ -1012,7 +1012,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>coxa_rt_j</joint_name>
-      <!-- <topic>/model/laracna/joint/coxa_rt_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/coxa_rt_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <p_gain>0.1</p_gain>
       <i_gain>0.001</i_gain>
@@ -1026,7 +1026,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>coxa_lb_j</joint_name>
-      <!-- <topic>/model/laracna/joint/coxa_lb_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/coxa_lb_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <p_gain>0.1</p_gain>
       <i_gain>0.001</i_gain>
@@ -1042,7 +1042,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>femur_lb_j</joint_name>
-      <!-- <topic>/model/laracna/joint/femur_lb_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/femur_lb_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <p_gain>0.1</p_gain>
       <i_gain>0.001</i_gain>
@@ -1056,7 +1056,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>femur_lt_j</joint_name>
-      <!-- <topic>/model/laracna/joint/femur_lt_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/femur_lt_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <p_gain>0.1</p_gain>
       <i_gain>0.001</i_gain>
@@ -1070,7 +1070,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>femur_rt_j</joint_name>
-      <!-- <topic>/model/laracna/joint/femur_rt_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/femur_rt_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <p_gain>0.1</p_gain>
       <i_gain>0.001</i_gain>
@@ -1084,7 +1084,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>femur_rb_j</joint_name>
-      <!-- <topic>/model/laracna/joint/femur_rb_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/femur_rb_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <p_gain>0.1</p_gain>
       <i_gain>0.001</i_gain>
@@ -1100,7 +1100,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>tibia_lt_j</joint_name>
-      <!-- <topic>/model/laracna/joint/tibia_lt_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/tibia_lt_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <p_gain>0.1</p_gain>
       <i_gain>0.001</i_gain>
@@ -1114,7 +1114,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>tibia_rt_j</joint_name>
-      <!-- <topic>/model/laracna/joint/tibia_rt_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/tibia_rt_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <p_gain>0.1</p_gain>
       <i_gain>0.001</i_gain>
@@ -1128,7 +1128,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>tibia_rb_j</joint_name>
-      <!-- <topic>/model/laracna/joint/tibia_rb_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/tibia_rb_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <p_gain>0.1</p_gain>
       <i_gain>0.001</i_gain>
@@ -1142,7 +1142,7 @@
     <plugin filename="libignition-gazebo-joint-position-controller-system.so"
       name="ignition::gazebo::systems::JointPositionController">
       <joint_name>tibia_lb_j</joint_name>
-      <!-- <topic>/model/laracna/joint/tibia_lb_j/cmd_pos</topic> -->
+      <topic>/model/laracna/joint/tibia_lb_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
       <p_gain>0.1</p_gain>
       <i_gain>0.001</i_gain>
