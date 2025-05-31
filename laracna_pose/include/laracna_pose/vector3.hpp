@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <stdexcept>
+#include <cmath>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ public:
     Vector3(void){};
 
     
-    Vector3(const vector<T>& v){
+    Vector3(vector<T> v){
         
         if(v.size() != 3){
             throw invalid_argument("vector must have 3 elements");
@@ -35,7 +36,7 @@ public:
         z = num;
         
     } 
-
+    float get_magnitude(void){return sqrt(x*x + y*y + z*z);}
     
 private:
 
