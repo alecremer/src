@@ -2,3 +2,6 @@
 .vscode/settings.json
 .vscode
 log
+CMakeFiles
+*.a
+Makefile

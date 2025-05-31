@@ -5,13 +5,29 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
+# find  rosdependencies
 find_package(ament_cmake REQUIRED)
 
 find_package(std_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 
+# external dependencies
+include(FetchContent)
+FetchContent_Declare(
+  Catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v3.5.4 # ou a versão mais recente
+)
+FetchContent_MakeAvailable(Catch2)
+
+enable_testing()
+
 include_directories(include)
+
+
+# add_subdirectory(tests)
+
+
 
 add_executable(pose_node 
   src/publisher_creator.cpp
