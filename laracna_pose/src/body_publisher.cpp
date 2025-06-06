@@ -1,12 +1,12 @@
 #include <rclcpp/rclcpp.hpp>
-#include "laracna_pose/publisher_creator.hpp"
+#include "laracna_pose/body_publisher.hpp"
 
 using namespace rclcpp;
 
 
-PublisherCreator::PublisherCreator(shared_ptr<Node> node){
+BodyPublisher::BodyPublisher(shared_ptr<Node> node){
 
-    LegPublisherConfig leg_rt_config, leg_rb_config, leg_lt_config, leg_lb_config;
+    LegPublisherMap leg_rt_config, leg_rb_config, leg_lt_config, leg_lb_config;
 
     leg_rt_config.topic_joint_coxa  = "/hw_sim/leg_rt/coxa/move";
     leg_rt_config.topic_joint_femur = "/hw_sim/leg_rt/femur/move";
@@ -31,3 +31,11 @@ PublisherCreator::PublisherCreator(shared_ptr<Node> node){
 
 }
 
+void BodyPublisher::pub(BodyPose& body_pose){
+    
+    leg_lt_publisher.pub(body_pose.leg_lt);
+    leg_lb_publisher.pub(body_pose.leg_lb);
+    leg_rt_publisher.pub(body_pose.leg_rt);
+    leg_rb_publisher.pub(body_pose.leg_rb);
+
+}

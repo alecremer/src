@@ -1,18 +1,19 @@
-#ifndef PUBLISHER_CREATOR_HPP
-#define PUBLISHER_CREATOR_HPP
+#ifndef BODY_PUBLISHER_HPP
+#define BODY_PUBLISHER_HPP
 
 #include <rclcpp/rclcpp.hpp>
-#include "leg_publisher_config.hpp"
+#include "leg_publisher_map.hpp"
 #include "laracna_pose/leg_publisher.hpp"
+#include "body_pose.hpp"
 
 using namespace rclcpp;
 
-class PublisherCreator{
+class BodyPublisher{
 
 public:
 
-    PublisherCreator(shared_ptr<Node> node);
-
+    BodyPublisher(shared_ptr<Node> node);
+    void pub(BodyPose& body_pose);
 
 private:
     LegPublisher leg_rt_publisher;
@@ -21,4 +22,4 @@ private:
     LegPublisher leg_lb_publisher;
 };
 
-#endif // PUBLISHER_CREATOR_HPP
+#endif // BODY_PUBLISHER_HPP

@@ -30,8 +30,8 @@ include_directories(include)
 
 
 add_executable(pose_node 
-  src/publisher_creator.cpp
   src/leg_publisher.cpp
+  src/body_publisher.cpp
   src/main.cpp
 )
 

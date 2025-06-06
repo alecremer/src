@@ -2,7 +2,7 @@
 #define POSE_NODE_HPP
 
 #include <rclcpp/rclcpp.hpp>
-#include "publisher_creator.hpp"
+#include "body_publisher.hpp"
 
 using namespace rclcpp;
 
