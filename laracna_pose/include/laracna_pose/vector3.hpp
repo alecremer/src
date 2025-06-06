@@ -38,6 +38,14 @@ public:
     } 
     float get_magnitude(void){return sqrt(x*x + y*y + z*z);}
     
+    Vector3<T> degrees(void){
+        return Vector3(vector<T>{x*180.0f/M_PI, y*180.0f/M_PI, z*180.0f/M_PI});
+    }
+
+    Vector3<T> rad(void){
+        return Vector3(vector<T>{x*M_PI/180.0f, y*M_PI/180.0f, z*M_PI/180.0f});
+    }
+    
 private:
 
 };

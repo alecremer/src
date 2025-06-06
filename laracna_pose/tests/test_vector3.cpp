@@ -3,6 +3,7 @@
 
 #include <unity.h>
 #include <iostream>
+#include <cmath>
 #include <sstream>
 #include "laracna_pose/vector3.hpp"
 
@@ -62,11 +63,31 @@ void test_magnitude(){
 
 }
 
+void test_get_degrees(){
+    Vector3<float> v(vector<float>{30.0f*(M_PI/180.0f), 12.0f*(M_PI/180.0f), 75.0f*(M_PI/180.0f)});
+    Vector3<float> v_degrees = v.degrees(); 
+    TEST_ASSERT_FLOAT_WITHIN(0.001f, 30.0f, v_degrees.x);
+    TEST_ASSERT_FLOAT_WITHIN(0.001f, 12.0f, v_degrees.y);
+    TEST_ASSERT_FLOAT_WITHIN(0.001f, 75.0f, v_degrees.z);
+
+}
+
+void test_get_rad(){
+    Vector3<float> v(vector<float>{30.0f, 12.0f, 75.0f});
+    Vector3<float> v_rad = v.rad(); 
+    TEST_ASSERT_FLOAT_WITHIN(0.001f, 30.0f*(M_PI/180.0f), v_rad.x);
+    TEST_ASSERT_FLOAT_WITHIN(0.001f, 12.0f*(M_PI/180.0f), v_rad.y);
+    TEST_ASSERT_FLOAT_WITHIN(0.001f, 75.0f*(M_PI/180.0f), v_rad.z);
+
+}
+
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST([]{assign_float();});
     RUN_TEST([]{create_by_vector();});
     RUN_TEST([]{create_by_num();});
     RUN_TEST([]{test_magnitude();});
+    RUN_TEST([]{test_get_degrees();});
+    RUN_TEST([]{test_get_rad();});
     return UNITY_END();
 }
