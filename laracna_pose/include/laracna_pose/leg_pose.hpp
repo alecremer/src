@@ -34,6 +34,16 @@ public:
     void reset(void){
         angles = 0;
     }
+
+    LegPose rad(void){
+        Vector3<float> angles_rad = this->angles.rad();
+        return LegPose(angles_rad);
+    }
+
+    LegPose degrees(void){
+        Vector3<float> angles_degrees = this->angles.degrees();
+        return LegPose(angles_degrees);
+    }
     
 private:
 

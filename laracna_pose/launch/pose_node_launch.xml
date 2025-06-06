@@ -1,9 +1,32 @@
 <?xml version="1.0"?>
 <launch>
     <node name="pose_node" pkg="laracna_pose" exec="pose_node" output="screen" namespace="laracna">
-        <param name="wakeup_1_c" value="0"/>
-        <param name="wakeup_1_f" value="-60"/>
-        <param name="wakeup_1_t" value="45"/>
+        <!-- <param name="wakeup_1_c" value="0.0"/>
+        <param name="wakeup_1_f" value="-100.0"/>
+        <param name="wakeup_1_t" value="-140.0"/>
+        <param name="wakeup_1_t_ms" value="1000.0"/>
+
+        <param name="wakeup_2_c" value="0.0"/>
+        <param name="wakeup_2_f" value="0.0"/>
+        <param name="wakeup_2_t" value="-120.0"/>
+        <param name="wakeup_2_t_ms" value="1000.0"/> -->
+
+        <param name="walk_c" value="0.0"/>
+        <param name="walk_f" value="0.0"/>
+        <param name="walk_t" value="-120.0"/>
+        <param name="walk_t_ms" value="1000.0"/>
+
+        <!-- WORKS -->
+        <param name="wakeup_1_c" value="0.0"/>
+        <param name="wakeup_1_f" value="-90.0"/>
+        <param name="wakeup_1_t" value="-120.0"/>
+        <param name="wakeup_1_t_ms" value="1000.0"/>
+
+        <param name="wakeup_2_c" value="0.0"/>
+        <param name="wakeup_2_f" value="-30.0"/>
+        <param name="wakeup_2_t" value="-120.0"/>
+        <param name="wakeup_2_t_ms" value="1000.0"/>
+
     </node>
     <!-- <node pkg="turtlesim" exec="mimic" name="mimic">
         <remap from="/input/pose" to="/turtlesim1/turtle1/pose"/>

@@ -17,6 +17,16 @@ public:
     leg_rt(leg_ext), leg_rb(leg_ext), leg_lt(leg_ext), leg_lb(leg_ext)
     {};
     LegPose leg_rt, leg_rb, leg_lt, leg_lb;
+    BodyPose rad(void){
+
+        BodyPose pose_rad;
+        pose_rad.leg_lb = this->leg_lb.rad();
+        pose_rad.leg_lt = this->leg_lt.rad();
+        pose_rad.leg_rb = this->leg_rb.rad();
+        pose_rad.leg_rt = this->leg_rt.rad();
+
+        return pose_rad;
+    }
 
 private:
 

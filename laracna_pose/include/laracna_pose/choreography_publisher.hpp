@@ -18,7 +18,7 @@ public:
         for(auto move : choreography){
             body_publisher_.pub(move.pose);
             rclcpp::sleep_for(chrono::duration_cast<std::chrono::nanoseconds>(
-            std::chrono::duration<double>(move.t*1000)
+            std::chrono::duration<double>(move.t/1000.0f)
             ));
         }
     }

@@ -27,6 +27,7 @@
             <!-- <uri>package://ros_gz_example_description/meshes/base_link_collider.stl</uri> -->
           <!-- </mesh> -->
         </geometry>
+        
       </collision>
       <visual name='base_link_visual'>
         <pose>0 0 0 0 0 0</pose>
@@ -57,6 +58,8 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -134,6 +137,8 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -209,6 +214,10 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
+          <effort>1500.0</effort>       <!-- Ajuste conforme necessário -->
+          <velocity>1000.0</velocity>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -257,6 +266,14 @@
             <!-- <uri>package://ros_gz_example_description/meshes/tibia_lb.stl</uri> -->
           <!-- </mesh> -->
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>         <!-- Atrito estático -->
+              <mu2>1.0</mu2>       <!-- Atrito dinâmico -->
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_lb_visual'>
         <pose>0 0 0 0 0 0</pose>
@@ -283,6 +300,8 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
         </limit>
         <dynamics>
           <damping>0.001</damping>
@@ -364,6 +383,8 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -441,6 +462,8 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -489,6 +512,14 @@
             <!-- <uri>package://ros_gz_example_description/meshes/tibia_lb_collider.stl</uri>
           </mesh> -->
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>         <!-- Atrito estático -->
+              <mu2>1.0</mu2>       <!-- Atrito dinâmico -->
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_lt_visual'>
         <pose>0 0 0 0 0 0</pose>
@@ -515,6 +546,8 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -590,6 +623,8 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -665,6 +700,8 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -713,6 +750,14 @@
             <!-- <uri>package://ros_gz_example_description/meshes/tibia_rb.stl</uri> -->
           <!-- </mesh> -->
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>         <!-- Atrito estático -->
+              <mu2>1.0</mu2>       <!-- Atrito dinâmico -->
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_rb_visual'>
         <pose>0 0 0 0 0 0</pose>
@@ -739,6 +784,8 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -814,6 +861,8 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -895,6 +944,8 @@
         <limit>
           <lower>-3.1416</lower>
           <upper>3.1416</upper>
+          <effort>30.0</effort>
+          <velocity>10.0</velocity>
         </limit>
         <dynamics>
           <damping>0.01</damping>
@@ -943,6 +994,14 @@
             <!-- <uri>package://ros_gz_example_description/meshes/tibia_rt.stl</uri> -->
           <!-- </mesh> -->
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>         <!-- Atrito estático -->
+              <mu2>1.0</mu2>       <!-- Atrito dinâmico -->
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_rt_visual'>
         <pose>0 0 0 0 0 0</pose>
@@ -979,7 +1038,7 @@
       <i_min>-1.0</i_min>
       <cmd_max>1.0</cmd_max>
       <cmd_min>-1.0</cmd_min> -->
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
@@ -1000,7 +1059,7 @@
       <i_min>-1000.0</i_min>
       <cmd_max>1000.0</cmd_max>
       <cmd_min>-1000.0</cmd_min> -->
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
@@ -1014,7 +1073,7 @@
       <joint_name>coxa_rt_j</joint_name>
       <topic>/model/laracna/joint/coxa_rt_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
@@ -1028,7 +1087,7 @@
       <joint_name>coxa_lb_j</joint_name>
       <topic>/model/laracna/joint/coxa_lb_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
@@ -1044,7 +1103,7 @@
       <joint_name>femur_lb_j</joint_name>
       <topic>/model/laracna/joint/femur_lb_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
@@ -1058,7 +1117,7 @@
       <joint_name>femur_lt_j</joint_name>
       <topic>/model/laracna/joint/femur_lt_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
@@ -1072,7 +1131,7 @@
       <joint_name>femur_rt_j</joint_name>
       <topic>/model/laracna/joint/femur_rt_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
@@ -1086,7 +1145,7 @@
       <joint_name>femur_rb_j</joint_name>
       <topic>/model/laracna/joint/femur_rb_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
@@ -1102,7 +1161,7 @@
       <joint_name>tibia_lt_j</joint_name>
       <topic>/model/laracna/joint/tibia_lt_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
@@ -1116,7 +1175,7 @@
       <joint_name>tibia_rt_j</joint_name>
       <topic>/model/laracna/joint/tibia_rt_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
@@ -1130,7 +1189,7 @@
       <joint_name>tibia_rb_j</joint_name>
       <topic>/model/laracna/joint/tibia_rb_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
@@ -1144,7 +1203,7 @@
       <joint_name>tibia_lb_j</joint_name>
       <topic>/model/laracna/joint/tibia_lb_j/cmd_pos</topic>
       <initial_position>0.0</initial_position>
-      <p_gain>0.1</p_gain>
+      <p_gain>1.0</p_gain>
       <i_gain>0.001</i_gain>
       <d_gain>0.001</d_gain>
       <i_max>1.0</i_max>
